@@ -5,11 +5,11 @@ import java.util.*;
 
 public class Basic {
     //This is generalised method for printing list.
-    public static void printlist(List<Integer> list)
+    /*public static void printlist(List<Integer> list)
     {
         for(Integer n: list)
             System.out.println(n);
-    }
+    }*/
     public static void printusingfunctional(List<Integer> list)
     {
         //stream is used for taking element from list,collection etc.
@@ -23,9 +23,12 @@ public class Basic {
          //we have a method which determines whether a number is even or odd.
         // so to apply this method in functional programming we use method referencing.
         //ex.
-        list.stream()
-                .filter(Basic::isEven)
-                .forEach(System.out::println);
+
+        //list.stream()
+                //.filter(Basic::isEven)
+                //.forEach(System.out::println);
+
+
         //we can even modify the filter
         // we will use the process called lambda expression.
         //It is used to simplify codes.
@@ -34,13 +37,37 @@ public class Basic {
                 .forEach(System.out::println);
         //above code works exactly same as the Basic::isEven.. we have seen lambda is use.
     }
-    public static boolean isEven(int n)
+    public static void printAllOddNumbers(List<Integer> list)
+    {
+        System.out.println("Printing all odd numbers");
+        list.stream()
+                .filter(num->num%2!=0)
+                .forEach(System.out::println);
+    }
+    public static void printParticularCourses(List<String> list)
+    {
+
+        list.stream()
+                .filter(name->name.equalsIgnoreCase("maths"))
+                .map(count->count+1)
+                .forEach(System.out::println);
+    }
+
+    public static void courseLengthGreaterThan4(List<String> list)
+    {
+        list.stream()
+                .filter(course->course.length()>=4)
+                .forEach(System.out::println);
+    }
+
+
+    /*public static boolean isEven(int n)
     {
         if(n%2==0)
             return true;
         else
             return false;
-    }
+    }*/
 
 
     public static void main(String[] args) {
@@ -55,6 +82,16 @@ public class Basic {
         //printlist(list);
         //this will print using functional programming.
         printusingfunctional(list);
+        printAllOddNumbers(list);
+        List<String> courses=new ArrayList<>();
+        courses.add("Maths");
+        courses.add("Science");
+        courses.add("Maths");
+        courses.add("English");
+        courses.add("Sanskrit");
+        printParticularCourses(courses);
+        System.out.println();
+        courseLengthGreaterThan4(courses);
     }
 
 }
