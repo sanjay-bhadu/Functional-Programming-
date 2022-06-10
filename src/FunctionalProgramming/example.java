@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 //question
 // taking a list of string which contains number in string format
 // print all even number
-public class example {
+public class example{
     public static void main(String[] args) {
         List<String> list=new ArrayList<>();
         Scanner scan=new Scanner(System.in);
