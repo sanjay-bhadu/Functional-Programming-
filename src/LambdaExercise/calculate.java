@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class calculate {
     public static void main(String[] args) {
         calulator calulator=new calulator();
+        //here we are basically adding operator and there function in form of functionalInterface
+        //we can use the lambda as we are using FunctionalINterface.
         calulator.reserveOperation("+",(a,b)->a+b);
         calulator.reserveOperation("-",(a,b)->a-b);
         calulator.reserveOperation("*",(a,b)->a*b);
