@@ -2,9 +2,6 @@ package filesInputOutput;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 public class udacityQuestion {
     private static final int SHARD_SIZE = 10;
@@ -21,6 +18,7 @@ public class udacityQuestion {
             {
                 list.add(s);
             }
+            reader.close();
             //sorting the list.
         list.sort(String::compareTo);
             BufferedWriter writer=new BufferedWriter(new FileWriter("output1.txt"));
