@@ -11,7 +11,8 @@ public class udacityQuestion2 {
     public static void main(String[] args) throws IOException {
 
         int shard=0;
-        try(BufferedReader bufferedReader=new BufferedReader(new FileReader("input.txt")))
+        try(BufferedReader bufferedReader=new BufferedReader(new FileReader("input.txt")))//use of buffers with the try and catch black these are autoclosable.
+                //above is called try with resource.
         {
             String read=bufferedReader.readLine();
             while(read!=null) {
