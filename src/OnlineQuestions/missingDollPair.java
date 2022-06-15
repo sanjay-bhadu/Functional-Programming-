@@ -1,8 +1,6 @@
 package OnlineQuestions;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class missingDollPair {
     public static void main(String[] args) {
